@@ -4,4 +4,7 @@ describe("Calcular suma de numeros en cadena", () => {
   it("Cuando se pasa una cadena vacia deberia dar como resultado 0", () => {
     expect(calcularCadena("")).toEqual(0);
   });
+  it("Cuando se pasa una cadena con un solo elemento retorna ese mismo elemento", () => {
+    expect(calcularCadena("5")).toEqual(5);
+  });
 });
