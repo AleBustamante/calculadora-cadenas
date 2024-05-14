@@ -16,8 +16,11 @@ function calcularCadena(cadena, delimitador) {
     listaNumeros = cadena.split(regex);
   }
   let resultadoSuma = 0;
-  for (const numero of listaNumeros) {
-    resultadoSuma += parseInt(numero);
+  for (const strNumero of listaNumeros) {
+    const numero = parseInt(strNumero);
+    if (numero <= 1000) {
+      resultadoSuma += numero;
+    }
   }
   return resultadoSuma;
 }

@@ -22,4 +22,7 @@ describe("Calcular suma de numeros en cadena", () => {
   it("Devuelve la suma de una cadena separada por guiones, comas, espacios o un caracter especial indicado por el usuario", () => {
     expect(calcularCadena("5,4 23,1$7-8$10", "$")).toEqual(58);
   });
+  it("Se ignoran numeros mayores a 1000", () => {
+    expect(calcularCadena("5,4,2300 23,1|7-8|10,1200", "|")).toEqual(58);
+  });
 });
