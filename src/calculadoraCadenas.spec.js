@@ -25,4 +25,7 @@ describe("Calcular suma de numeros en cadena", () => {
   it("Se ignoran numeros mayores a 1000", () => {
     expect(calcularCadena("5,4,2300 23,1|7-8|10,1200", "|")).toEqual(58);
   });
+  it("Se puede usar más de un caracter como delimitador", () => {
+    expect(calcularCadena("5,,,,4,2300   23,1||||7-8|||10,1200", "|")).toEqual(58);
+  });
 });
