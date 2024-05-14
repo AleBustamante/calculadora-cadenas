@@ -19,4 +19,7 @@ describe("Calcular suma de numeros en cadena", () => {
   it("Devuelve la suma para una cadena con elementos separados por guiones, comas o espacios", () => {
     expect(calcularCadena("5,4 23,1,7-8-10", "")).toEqual(58);
   });
+  it("Devuelve la suma de una cadena separada por guiones, comas, espacios o un caracter especial indicado por el usuario", () => {
+    expect(calcularCadena("5,4 23,1$7-8$10", "$")).toEqual(58);
+  });
 });
