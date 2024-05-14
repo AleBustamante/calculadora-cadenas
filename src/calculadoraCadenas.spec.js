@@ -16,4 +16,7 @@ describe("Calcular suma de numeros en cadena", () => {
   it("Cuando se pasa una cadena con varios elementos separados por espacios o comas devuelve su suma", () => {
     expect(calcularCadena("5,4 23,1,7")).toEqual(40);
   });
+  it("Devuelve la suma para una cadena con elementos separados por guiones, comas o espacios", () => {
+    expect(calcularCadena("5,4 23,1,7-8-10")).toEqual(58);
+  });
 });
