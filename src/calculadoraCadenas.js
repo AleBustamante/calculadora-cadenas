@@ -4,6 +4,7 @@ function generarRegexSegura(caracter) {
 }
 
 function sumarElementosCadena(cadena, delimitador) {
+  const MAX_NUMERO_ACEPTADO = 1000;
   if (cadena === "") {
     return 0;
   }
@@ -20,7 +21,7 @@ function sumarElementosCadena(cadena, delimitador) {
   let resultadoSuma = 0;
   for (const strNumero of listaNumeros) {
     const numero = parseInt(strNumero);
-    if (numero <= 1000) {
+    if (numero <= MAX_NUMERO_ACEPTADO) {
       resultadoSuma += numero;
     }
   }
