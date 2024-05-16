@@ -2,7 +2,7 @@ function asegurarDelimitador(caracter) {
     return caracter.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
-function calcularCadena(cadena, delimitador) {
+function sumarElementosCadena(cadena, delimitador) {
   if (cadena === "") {
     return 0;
   }
@@ -26,4 +26,4 @@ function calcularCadena(cadena, delimitador) {
 }
 
 
-export default calcularCadena;
+export default sumarElementosCadena;
