@@ -1,5 +1,6 @@
-function asegurarDelimitador(caracter) {
-    return caracter.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+function generarRegexSegura(caracter) {
+    const delimitadorSeguro = caracter.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return new RegExp(`[ ,\\-]|${delimitadorSeguro}`, 'g');
 }
 
 function sumarElementosCadena(cadena, delimitador) {
@@ -7,14 +8,15 @@ function sumarElementosCadena(cadena, delimitador) {
     return 0;
   }
   let listaNumeros = "";
+
   if (delimitador == "") {
     listaNumeros = cadena.split(/[,\ ,-]/);
   }
   else {
-    const delimitadorSeguro = asegurarDelimitador(delimitador)
-    const regex = new RegExp(`[ ,\\-]|${delimitadorSeguro}`, 'g');
+    const regex = generarRegexSegura(delimitador)
     listaNumeros = cadena.split(regex);
   }
+
   let resultadoSuma = 0;
   for (const strNumero of listaNumeros) {
     const numero = parseInt(strNumero);
